@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','banned',
     ];
 
     /**
@@ -27,6 +27,47 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function getId(){
+        return $this->attributes['id'];
+    }
+
+    public function setId($id){
+        $this->attributes['id'] = $id;
+    }
+
+    public function getName(){
+        return $this->attributes['name'];
+    }
+
+    public function setName($name){
+        $this->attributes['name'] = $name;
+    }
+
+    public function getUsername(){
+        return $this->attributes['username'];
+    }
+
+    public function setUsername($username){
+        $this->attributes['username'] = $username;
+    }
+
+    public function getPassword(){
+        return $this->attributes['password'];
+    }
+
+    public function setPassword($password){
+        $this->attributes['password'] = $password;
+    }
+
+    public function getBanned(){
+        return $this->attributes['banned'];
+    }
+
+    public function setBanned($banned){
+        $this->attributes['banned'] = $banned;
+    }
+
 
     /**
      * The attributes that should be cast to native types.
