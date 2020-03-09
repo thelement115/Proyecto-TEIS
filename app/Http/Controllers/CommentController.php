@@ -21,11 +21,7 @@ class CommentController extends Controller
 
     public function create()
     {
-      $data = []; //to be sent to the view
-      $data["title"] = "Agregar Comentario";
-      $data["Comentario"] = Comment::all();
-
-        return view('comment.create')->with("data",$data);
+      return view('comment.create');
     }
 
     public function save(Request $request){
