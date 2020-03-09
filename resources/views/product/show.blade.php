@@ -23,9 +23,9 @@
                     <b>Descripcción:</b> {{ $data["product"]["description"] }}<br /><br />
                 </div>
             </div>
-            <a href="{{ route('product.delete', $data["product"]["id"]) }}" class="btn btn-danger" onclick="
+            {{-- <a href="{{ route('product.delete', $data["product"]["id"]) }}" class="btn btn-danger" onclick="
             return confirm('¿Seguro que desea eliminar este producto?')"
-                ><span aria-hidden="true"></span>Borrar Producto</a>
+                ><span aria-hidden="true"></span>Borrar Producto</a> --}}
         </div>
     </div>
 </div>

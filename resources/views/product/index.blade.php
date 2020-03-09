@@ -24,7 +24,7 @@
     <div class="row justify-content-center">
         <div class="col-sm-10">
             <div class="card">
-                <br><h2 align="center"><strong> Haga click en el Id del producto <br> desea consultar. </strong></h2><br>
+                <br><h2 align="center"><strong> @lang('Product list') </strong></h2><br>
                 {{-- <form class="navbar-form navbar-brand col-md-4 my-1 mx-5" role="search">
                     <div class="form-group">
                         <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="sortby">
@@ -38,17 +38,39 @@
                     <div class="col-sm" >
                         <ul id="errors">
                             @foreach($data["products"] as $product)
-                                <div class="row p-4 m-auto">
+
+                            {{-- <div class="card" style="width: 50rem;">
+                                <img class="card-img-top" src="..." alt="Card image cap">
+                                <div class="card-body">
+                                    <h6>{{ "Id: ". $product->getId() }} </h6>
+                                    <h5>{{ "Producto: ". $product->getName() }}</h5>
+                                    <h5>{{ "Precio: $". $product->getPrice() }}</h5> 
+                                    <a href="{{ route('product.show', $product->getId()) }}" class="btn btn-primary"> @lang('View more details')</a>
+                                </div>
+                            </div>
+                            <br> --}}
+
+
+                            <div class="card" style="width: 50rem;">
+                                <div class="row p-4">
                                     <div class="col-lg">
-                                        <h3><a href="{{ route('product.show', $product->getId()) }}" > Id: {{$product->getId() }}</a></h3>
-                                        <h5>{{ "Producto: ". $product->getName() }}</h5>
-                                        <h5>{{ "Precio: $". $product->getPrice() }}</h5> 
+                                        <h6>{{ "Id: ". $product->getId() }} </h6>
+                                        <h5> @lang("Product") {{ $product->getName() }}</h5>
+                                        <h5> @lang("Price") {{ $product->getPrice() }}</h5> 
+                                        <a href="{{ route('product.show', $product->getId()) }}" > @lang("View more details")</a>
+                                    </div>
+                                    <div class="row p-5">
+                                        <div class="col-lg">
+                                            <img src="" alt="imagen_producto" />
+                                        </div>
                                     </div>
                                 </div>
+                            </div>
+                            <br>
                             @endforeach
                         </ul>
                     </div>
-                    <div class="col-sm">
+                    {{-- <div class="col-sm">
                         <ul id="errors">
                             @foreach($data["products"] as $product)
                                 <div class="row p-5">
@@ -58,7 +80,7 @@
                                 </div>
                             @endforeach
                         </ul>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

@@ -9,7 +9,7 @@
         <div class="col-md-8">
             @include('util.message')
             <div class="card-header">
-                Crear Producto Nuevo
+                @lang('Create new product')
             </div>
             <div class="card-body">
                 @if ($errors->any())
@@ -21,16 +21,16 @@
                     </ul>
                 </div><br />
                 @endif
-                <form method="POST" action="{{ route('product.save') }}">
+                <form method="POST" action="{{ route('product.save') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">  
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="name">Producto:</label>
+                                <label for="name">@lang("Product")</label>
                                 <input type="text" class="form-control" name="name" placeholder="Escriba el nombre del producto" value="{{ old('name') }}"/>
                             </div> 
                             <div class="form-group col-md-6">
-                                <label for="price">Precio</label>
+                                <label for="price">@lang("Price")</label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">$</div>
@@ -40,11 +40,14 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="description">Descripción del producto</label>
+                            <label for="description">@lang("Description")</label>
                             <textarea class="form-control" name="description" rows="2" placeholder="Escriba una breve descripción del producto a registar" value="{{ old('description') }}"></textarea>
                         </div>
+                        <label>@lang("Image")</label>
+
+                        <input type="file" name="productImage" />
                     </div>
-                    <button type="submit" class="btn btn-primary">Crear producto</button>
+                    <button type="submit" class="btn btn-primary">@lang("Create product")</button>
                 </form>
             </div>
         </div>
