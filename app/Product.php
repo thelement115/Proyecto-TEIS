@@ -38,7 +38,7 @@ class Product extends Model {
         return $this->attributes['description'];
     }
 
-    public function setDescription($price) {
+    public function setDescription($description) {
         $this->attributes['description'] = $description;
     }
 }

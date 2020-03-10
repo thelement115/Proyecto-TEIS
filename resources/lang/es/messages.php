@@ -10,12 +10,7 @@ return [
     'change' => 'Cambiar',
     'goProducts' => 'Productos',
     'succesRegister' => 'Se a guardado el admin correctamente',
-];
-
-return [
+    'ban' => 'Banear',
     'show' => 'Ver comentario',
-];
-
-return [
     'comment' => 'Comentario',
-]
+];
