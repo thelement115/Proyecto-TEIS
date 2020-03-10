@@ -12,7 +12,7 @@
         <div class="card-body">
           <form method="POST" action="{{route('comment.save')}}">
             @csrf
-            <input type="text" placeholder="Ingrese usuario" name="username" value="{{old('usarname')}}" />
+            <input type="text" placeholder="Ingrese usuario" name="username" value="{{old('username')}}" />
             <br><br/>
             <textarea  rows="10", cols="70" style="text-align:center;" type="text" placeholder="Ingrese comentario"  name="comment"  value="{{old('comment')}} "></textarea>
             <input type="submit" value="Comentar" />

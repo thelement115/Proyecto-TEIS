@@ -55,6 +55,6 @@ class CommentController extends Controller
     public function erase($id)
     {
         Comment::where('id', $id)->delete();
-        return redirect('comment/show');
+        return redirect()->route('comment/show');
     }
 }
