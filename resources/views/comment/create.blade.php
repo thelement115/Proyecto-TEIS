@@ -4,7 +4,7 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-8">
-      @include('util.message')
+      @include('util.messagecomment')
       <div class="card">
         <div class="card-header">
          Agregar comentario
