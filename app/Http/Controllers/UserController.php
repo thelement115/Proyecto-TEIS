@@ -9,8 +9,7 @@ class UserController extends Controller{
 
     public function show(){
         $data = []; //to be sent to the view
-        $data["title"] = Lang::get('messages.register');
-        return view('user.register')->with("data",$data);
+        return view('user.register')->with("data");
     }
 
     public function save(Request $request)
