@@ -1,0 +1,23 @@
+.card-header{
+    font-weight: bold;
+}
+
+input.break{
+  height: 100%;
+  word-wrap: break-word;
+  word-break: break-all;
+  width: 100%;
+}
+
+.tambox{
+  height: 2vh;
+  width: 5vw;
+}
+
+.placeholder {
+  position: absolute;
+  left: 20px;
+  top: 0px;
+  background-color: white;
+  padding: 0 20px;
+}

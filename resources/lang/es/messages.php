@@ -11,3 +11,11 @@ return [
     'goProducts' => 'Productos',
     'succesRegister' => 'Se a guardado el admin correctamente',
 ];
+
+return [
+    'show' => 'Ver comentario',
+];
+
+return [
+    'comment' => 'Comentario',
+]
