@@ -12,7 +12,7 @@ class CommentController extends Controller
       $data = []; //to be sent to the view
       $comment = Comment::all();
 
-      $data["title"] = "Ver comentarios";
+      $data["title"] = Lang::get('messages.show');
       $data["comments"] = $comment;
 
       return view('comment.show')->with("data",$data);
@@ -42,7 +42,7 @@ class CommentController extends Controller
         $data = []; //to be sent to the view
         $comment = Comment::findOrFail($id);
 
-        $data["title"] = "Comentario";
+        $data["title"] = Lang::get('messages.comment');
         $data["comment"] = $comment;
 
         return view('comment.comment')->with("data",$data);
