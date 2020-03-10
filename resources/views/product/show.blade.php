@@ -27,9 +27,6 @@
                 @csrf @method('DELETE')
                 <button class="btn btn-danger">@lang("Delete product")</button>
             </form>
-            {{-- <a href="{{ route('product.delete', $data["product"]->getId()) }}" class="btn btn-danger" onclick="
-            return confirm('¿Seguro que desea eliminar este producto?')"
-                ><span aria-hidden="true"></span>@lang("Delete product")</a> --}}
         </div>
     </div>
 </div>
