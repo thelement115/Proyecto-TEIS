@@ -8,8 +8,7 @@ use Illuminate\Routing\Controller as BaseController;
 class CommentController extends Controller
 {
 
-  public function show()
-  {
+  public function show(){
       $data = []; //to be sent to the view
       $comment = Comment::all();
 
@@ -19,8 +18,7 @@ class CommentController extends Controller
       return view('comment.show')->with("data",$data);
   }
 
-    public function create()
-    {
+    public function create(){
       return view('comment.create');
     }
 
@@ -40,8 +38,7 @@ class CommentController extends Controller
 
    }
 
-   public function comment($id)
-    {
+   public function comment($id){
         $data = []; //to be sent to the view
         $comment = Comment::findOrFail($id);
 
@@ -52,8 +49,7 @@ class CommentController extends Controller
     }
 
 
-    public function erase($id)
-    {
+    public function erase($id){
         Comment::where('id', $id)->delete();
         return redirect()->route('comment/show');
     }

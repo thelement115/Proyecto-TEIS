@@ -10,13 +10,11 @@ class Comment extends Model
     protected $fillable =['username','comment'];
     public $timestamps = false;
 
-    public function getUsername()
-    {
+    public function getUsername(){
         return $this->attributes['username'];
     }
 
-    public function setUsername()
-    {
+    public function setUsername(){
       $this->attributes['username'] = $username;
     }
 
@@ -32,8 +30,7 @@ class Comment extends Model
       return $this->attributes['id'];
     }
 
-    public function setId($id)
-    {
+    public function setId($id){
       $this->attributes['id'] = $id;
     }
 }
