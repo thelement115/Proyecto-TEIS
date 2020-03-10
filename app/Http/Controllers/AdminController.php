@@ -31,7 +31,7 @@ class AdminController extends Controller
         if(AdminController::verify($user)){
             return view('admin.adminPanel');
         }else{
-            return redirect()->route('home');
+            return redirect()->route('product.index');
         }
     }
 
@@ -40,7 +40,7 @@ class AdminController extends Controller
         if(AdminController::verify($user)){
             return view('admin.adminCreate');
         }else{
-            return redirect()->route('home');
+            return redirect()->route('product.index');
         }
     }
 
@@ -66,12 +66,15 @@ class AdminController extends Controller
             $data['users'] = User::all();
             return view('admin.modifyUser')->with('data',$data);
         }else{
-            return redirect()->route('home');
+            return redirect()->route('product.index');
         }
     }
 
     public function BanUser($id){
-
+        $user = User::find($id);
+        $user->banned= true;
+        $user->save();
+        return back()->with('created','Usuario baneado satifactoriamente!');;
     }
 
 }
