@@ -3,12 +3,14 @@
 return [
 
     'register' => 'Crear Cuenta',
-];
-
-return [
+    'adminHeader' => 'Administración',
+    'createAdmin' => 'Crear un nuevo administrador',
+    'goUsers' => 'Usuarios',
+    'add' => 'Crear nuevo',
+    'change' => 'Cambiar',
+    'goProducts' => 'Productos',
+    'succesRegister' => 'Se a guardado el admin correctamente',
+    'ban' => 'Banear',
     'show' => 'Ver comentario',
-];
-
-return [
     'comment' => 'Comentario',
-]
+];
