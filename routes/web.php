@@ -14,3 +14,12 @@
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/product/index', 'ProductController@index')->name("product.index");
+Route::get('/product/create', 'ProductController@create')->name("product.create");
+Route::get('/product/show/{id}', 'ProductController@show')->name("product.show");
+Route::post('/product/store', 'ProductController@store')->name("product.save");
+Route::delete('/producto/{id}', 'ProductController@destroy')->name("product.destroy");
+
+Route::get('/image/index', 'ImageController@index')->name("image.index");
+Route::post('/image/save', 'ImageController@save')->name("image.save");
