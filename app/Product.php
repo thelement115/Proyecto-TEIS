@@ -9,6 +9,7 @@ class Product extends Model {
     //attributes id, name, price, description, created_at, updated_at
 
     protected $fillable = ['name','price', 'description'];
+    public $timestamps = false;
 
     public function getId() {
         return $this->attributes['id'];
@@ -38,7 +39,7 @@ class Product extends Model {
         return $this->attributes['description'];
     }
 
-    public function setDescription($price) {
+    public function setDescription($description) {
         $this->attributes['description'] = $description;
     }
 }

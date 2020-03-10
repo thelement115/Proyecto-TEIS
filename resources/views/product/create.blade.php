@@ -23,12 +23,12 @@
                 @endif
                 <form method="POST" action="{{ route('product.save') }}" enctype="multipart/form-data">
                     @csrf
-                    <div class="form-group">  
+                    <div class="form-group">
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="name">@lang("Product")</label>
                                 <input type="text" class="form-control" name="name" placeholder="Escriba el nombre del producto" value="{{ old('name') }}"/>
-                            </div> 
+                            </div>
                             <div class="form-group col-md-6">
                                 <label for="price">@lang("Price")</label>
                                 <div class="input-group">

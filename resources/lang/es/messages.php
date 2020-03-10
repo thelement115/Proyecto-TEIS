@@ -11,4 +11,12 @@ return [
 
 return [
     'comment' => 'Comentario',
-]
+];
+
+return [
+    'index' => 'Datos en sesión',
+];
+
+return [
+     'create' => 'Crear comentario',
+];

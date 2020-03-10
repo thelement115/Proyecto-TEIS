@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Comment;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\Lang;
 
 class CommentController extends Controller
 {
 
-  public function show(){
+  public function show($id){
       $data = []; //to be sent to the view
-      $comment = Comment::all();
+      $comment = Comment::findOrFail($id);
 
       $data["title"] = Lang::get('messages.show');
       $data["comments"] = $comment;
@@ -19,7 +20,9 @@ class CommentController extends Controller
   }
 
     public function create(){
-      return view('comment.create');
+      $data = [];
+      $data["title"] = Lang::get('messages.create');
+      return view('comment.create')->with("data",$data);
     }
 
     public function save(Request $request){
@@ -30,7 +33,7 @@ class CommentController extends Controller
 
         ]);
 
-      $comment=new comment();
+      $comment=new comment;
       $comment -> username = $request->username;
       $comment -> comment = $request->comment;
       $comment->save();
@@ -43,7 +46,7 @@ class CommentController extends Controller
         $comment = Comment::findOrFail($id);
 
         $data["title"] = Lang::get('messages.comment');
-        $data["comment"] = $comment;
+        $data["comments"] = $comment;
 
         return view('comment.comment')->with("data",$data);
     }
@@ -51,6 +54,6 @@ class CommentController extends Controller
 
     public function erase($id){
         Comment::where('id', $id)->delete();
-        return redirect()->route('comment/show');
+        return redirect()->route('product.index');
     }
 }
