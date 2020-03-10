@@ -29,10 +29,10 @@
         <div class = "col-5">
         </div>
         <div class = "col-md-auto">
-            <a>@lang('messages.add')</a>
+            <a href="{{ route('product.create')}}">@lang('messages.add')</a>
         </div>
         <div class = "col-md-auto">
-            <a>@lang('messages.change')</a>
+            <a href="{{ route('product.index')}}">@lang('messages.change')</a>
         </div>
     </div>
 </div>
