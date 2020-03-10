@@ -6,13 +6,14 @@
     <div class="row justify-content-center">
         <div class="col-md-8" style="padding-top=5px;">
             <div class="card">
-                <div class="card-header">{{ $data["comment"]["username"] }}</div>
+                <div class="card-header">{{ $data["comments"]->getUsername() }}</div>
                 <div class="card-body">
-                    <b>Id:</b> {{ $data["comment"]["id"] }}<br />
-                    <b>Nombre:</b> {{ $data["comment"]["username"] }}<br />
-                    <b>Comentario</b> {{ $data["comment"]["comment"] }} <br />
-                    <a href="{{ url('comment/erase/'.$data['comment']['id']) }}">
-                    <button>Borrar de base de datos</button>
+                    <b>@lang("Id"):</b> {{ $data["comments"]->getId()}}<br />
+                    <b>@lang("Nombre"):</b> {{ $data["comments"]->getUsername() }}<br />
+                    <b>@lang("Comentario"):</b> {{ $data["comments"]->getComment() }} <br />
+                    <form method="POST" action="{{ route('comment.erase', $data["comments"]->getId()) }}">
+                        @csrf @method('DELETE')
+                        <button class="btn btn-danger">@lang("Borrar comentario")</button>
                     </a>
                 </div>
             </div>

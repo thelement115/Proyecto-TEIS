@@ -5,21 +5,20 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-    @foreach($data["comments"] as $indexKey => $comment)
+        @foreach($data["comments"] as $indexKey => $comment)
         <div class="col-md-8" style="padding-top=5px;">
             <div class="card">
-                <div class="card-header">{{ $comment->getUsername() }}</div>
+                <div class="card-header">{{$comment->getUsername() }}</div>
                 <div class="card-body">
-                @if($indexKey<20)
-                <a href="{{url('comment/comment/'.$comment->getId())}}"> Ver más del usuario <b>{{ $comment->getId() }}</b></a>
-                @else
-                <a href="{{url('comment/comment/'.$comment->getId())}}"> Ver más del usuario {{ $comment->getId() }}</a>
-                @endif
+                    @if($indexKey<20) <a href="{{url('comment/comment/'.$comment->getId())}}"> Ver más del usuario <b>{{ $comment->getId() }}</b></a>
+                        @else
+                        <a href="{{url('comment/comment/'.$comment->getId())}}"> Ver más del usuario {{ $comment->getId() }}</a>
+                        @endif
                 </div>
             </div>
         </div>
 
-    @endforeach
+        @endforeach
     </div>
 </div>
 @endsection

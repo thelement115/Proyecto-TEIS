@@ -1,6 +1,6 @@
-@extends('layouts.app') 
+@extends('layouts.app')
 
-@section("title", $data["title"]) 
+@section("title", $data["title"])
 
 @section('content')
 
@@ -18,16 +18,24 @@
                     {{ $data["product"]["name"] }}
                 </div>
                 <div class="card-body">
-                    <b>@lang("Product")</b> {{ $data["product"]->getName() }}<br /> 
+                    <b>@lang("Product")</b> {{ $data["product"]->getName() }}<br />
                     <b>@lang("Price")</b> {{ $data["product"]->getPrice() }}<br /><br />
                     <b>@lang("Description")</b> {{ $data["product"]->getDescription() }}<br /><br />
                     <img width="100" src="{{URL::asset('storage/test.png')}}"/>
                 </div>
             </div> <br>
-            <form method="POST" action="{{ route('product.destroy', $data["product"]->getId()) }}">
-                @csrf @method('DELETE')
-                <button class="btn btn-danger">@lang("Delete product")</button>
-            </form>
+            <div class = "row">
+              <div class = "col">
+                <form method="POST" action="{{ route('product.destroy', $data["product"]->getId()) }}">
+                    @csrf @method('DELETE')
+                    <button class="btn btn-danger">@lang("Delete product")</button>
+                </form>
+              </div>
+              <div class = "col">
+                <a href="{{ route('comment.create') }}" > @lang("Escribir comentario")</a>
+              </div>
+            </div>
+
         </div>
     </div>
 </div>

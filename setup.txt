@@ -1,0 +1,7 @@
+Descargue el repositorio: https://github.com/thelement115/Proyecto-TEIS
+cree una base de datos llamada: misjuguetesdb
+En caso de crear la base de datos en nube cambie el documento .env
+si usa xampp solo active apache y mysql en caso de necesitar la base de datos local
+use el comando php artisan migrate para migrar la base de datos 
+en caso de no usar xampp ejecute el comando php artisan serve para correr el servidor
+la URL principal en local es http://localhost/TEIS/public. 

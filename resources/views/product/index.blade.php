@@ -30,18 +30,26 @@
                         <ul id="errors">
                             @foreach($data["products"] as $product)
                             <div class="card" style="width: 50rem;">
+
+
                                 <div class="row p-4">
                                     <div class="col-lg">
                                         <h6>{{ "Id: ". $product->getId() }} </h6>
                                         <h5> @lang("Product") {{ $product->getName() }}</h5>
-                                        <h5> @lang("Price") {{ $product->getPrice() }}</h5> 
+                                        <h5> @lang("Price") {{ $product->getPrice() }}</h5>
                                         <a href="{{ route('product.show', $product->getId()) }}" > @lang("View more details")</a>
+                                    </div>
+
                                     </div>
                                     <div class="row p-5">
                                         <div class="col-lg">
                                             <img src="" alt="imagen_producto" />
                                         </div>
                                     </div>
+                                      <form method="POST" action="{{route('cart.save')}}">
+                                        @csrf
+                                  <input type="submit" value="Agregar a carrito"/>
+                                </form>
                                 </div>
                             </div>
                             <br>

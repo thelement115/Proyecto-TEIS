@@ -14,3 +14,14 @@ return [
     'show' => 'Ver comentario',
     'comment' => 'Comentario',
 ];
+<<<<<<< HEAD
+
+return [
+    'index' => 'Datos en sesión',
+];
+
+return [
+     'create' => 'Crear comentario',
+];
+=======
+>>>>>>> 54a219c8c970c8ae98860e3d751677e762dbbe0e

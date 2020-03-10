@@ -17,7 +17,6 @@ class ProductController extends Controller {
         $data = []; //to be sent to the view
         $data["title"] = "List of products";
         $data["products"] = Product::all();
-
         return view('product.index')->with("data",$data);
     }
 
@@ -48,7 +47,6 @@ class ProductController extends Controller {
         ]);
         $storeInterface = app(ImageStorage::class);
         $storeInterface->store($request);
-        // return back()->with('success','Image uploaded successfully!');
         Product::create($request->all());    
 
         return back()->with('created','Elemento creado satisfactoriamente');
