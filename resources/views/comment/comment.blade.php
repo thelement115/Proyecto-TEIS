@@ -1,5 +1,8 @@
 @extends('layouts.app')
+<<<<<<< HEAD
 
+=======
+>>>>>>> 54a219c8c970c8ae98860e3d751677e762dbbe0e
 @section("title", $data["title"])
 
 @section('content')
