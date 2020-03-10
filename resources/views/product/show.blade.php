@@ -21,6 +21,7 @@
                     <b>@lang("Product")</b> {{ $data["product"]->getName() }}<br /> 
                     <b>@lang("Price")</b> {{ $data["product"]->getPrice() }}<br /><br />
                     <b>@lang("Description")</b> {{ $data["product"]->getDescription() }}<br /><br />
+                    <img width="100" src="{{URL::asset('storage/test.png')}}"/>
                 </div>
             </div> <br>
             <form method="POST" action="{{ route('product.destroy', $data["product"]->getId()) }}">
