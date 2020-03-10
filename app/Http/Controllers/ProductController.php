@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Interfaces\ImageStorage;
 use App\Product;
 use DB;
 
@@ -41,10 +42,12 @@ class ProductController extends Controller {
         $request->validate([
             "name" => "required",
             "price" => "required|numeric|gt:0",
-            "description" => "required|max:255"
-            // "filename" => "required"
+            "description" => "required|max:255",
+            "productImage" => "required"
         ]);
-        Product::create($request->only(["name","price","description"]));
+        $storeInterface = app(ImageStorage::class);
+        $storeInterface->store($request);
+        Product::create($request->all());    
 
         return back()->with('created','Elemento creado satisfactoriamente');
     }

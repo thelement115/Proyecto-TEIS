@@ -182,6 +182,7 @@ return [
         'title'                 => 'título',
         'username'              => 'usuario',
         'year'                  => 'año',
-        'product'               => 'producto'
+        'product'               => 'producto',
+        'productImage'          => 'imagen del producto'
     ],
 ];
