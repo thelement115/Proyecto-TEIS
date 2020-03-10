@@ -16,7 +16,6 @@ class ProductController extends Controller {
         $data = []; //to be sent to the view
         $data["title"] = "List of products";
         $data["products"] = Product::all();
-
         return view('product.index')->with("data",$data);
     }
 
@@ -45,7 +44,7 @@ class ProductController extends Controller {
             "description" => "required|max:255"
             // "filename" => "required"
         ]);
-        Product::create($request->only(["name","price","description"]));    
+        Product::create($request->only(["name","price","description"]));
 
         return back()->with('created','Elemento creado satisfactoriamente');
     }
