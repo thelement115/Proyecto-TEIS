@@ -19,10 +19,7 @@
         <div class = "col-5">
         </div>
         <div class = "col-md-auto">
-            <a>@lang('messages.add')</a>
-        </div>
-        <div class = "col-md-auto">
-            <a>@lang('messages.change')</a>
+            <a href="{{ route('admin.user')}}">@lang('messages.ban')</a>
         </div>
     </div>
     <div class = "row border-bottom border-dark mt-2 mb-2 text-primary font-weight-bold">

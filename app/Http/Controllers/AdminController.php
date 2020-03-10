@@ -11,31 +11,36 @@ use App\Admin;
 
 class AdminController extends Controller
 {
-    public function panel(){
-        $user = Auth::user();
+
+    private static function verify($user){
         if($user == null){
-            return redirect()->route('home');
+            return False;
         }else{
             $id = $user->getAuthIdentifier();
             $admin = Admin::where('user_id',$id)->get();
             if($admin->isEmpty()){
-                return redirect()->route('home');
+                return False;
+            }else{
+                return True;
             }
+        }
+    }
+
+    public function panel(){
+        $user = Auth::user();
+        if(AdminController::verify($user)){
             return view('admin.adminPanel');
+        }else{
+            return redirect()->route('home');
         }
     }
 
     public function createAdmin(){
         $user = Auth::user();
-        if($user == null){
-            return redirect()->route('home');
-        }else{
-            $id = $user->getAuthIdentifier();
-            $admin = Admin::where('user_id',$id)->get();
-            if($admin->isEmpty()){
-                return redirect()->route('home');
-            }
+        if(AdminController::verify($user)){
             return view('admin.adminCreate');
+        }else{
+            return redirect()->route('home');
         }
     }
 
@@ -53,4 +58,20 @@ class AdminController extends Controller
         $data['message'] = Lang::get('messages.succesRegister');
         return view('admin.adminCreate')->with("data",$data);
     }
+
+    public function modifyUser(){
+        $user = Auth::user();
+        if(AdminController::verify($user)){
+            $data = [];
+            $data['users'] = User::all();
+            return view('admin.modifyUser')->with('data',$data);
+        }else{
+            return redirect()->route('home');
+        }
+    }
+
+    public function BanUser($id){
+
+    }
+
 }

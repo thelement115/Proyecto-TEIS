@@ -12,7 +12,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    You are logged in!
+                    @lang('auth.succes')
                 </div>
             </div>
         </div>
