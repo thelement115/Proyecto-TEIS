@@ -5,6 +5,7 @@
     "Product": "Producto: ",
     "Price": "Precio: $",
     "Image": "Imagen del producto: ",
-    "Description": "Descripción del producto",
-    "Create product": "Crear producto"
+    "Description": "Descripción del producto: ",
+    "Create product": "Crear producto",
+    "Delete product": "Borrar producto"
 }
