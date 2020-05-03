@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model {
 
     //attributes id, name, price, description, created_at, updated_at
-
     protected $fillable = ['name','prize', 'description'];
 
     public function getId() {

@@ -44,11 +44,12 @@
                             <textarea class="form-control" name="description" rows="2" placeholder="Escriba una breve descripción del producto a registar" value="{{ old('description') }}"></textarea>
                         </div>
                         <label>@lang("Image")</label>
-
                         <input type="file" name="productImage" />
+                        <img width="100" src="{{URL::asset('storage/test.png')}}"/>
+                        
                     </div>
                     <button type="submit" class="btn btn-primary">@lang("Create product")</button>
-                </form>
+                </form>                
             </div>
         </div>
     </div>

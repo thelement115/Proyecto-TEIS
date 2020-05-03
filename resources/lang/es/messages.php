@@ -15,4 +15,6 @@ return [
     'comment' => 'Comentario',
     'buyProduct' => 'Comprar',
     'buyTitle' => 'Checkout',
+    'create' => 'Crear comentario',
+    'index' => 'Datos en sesión',
 ];

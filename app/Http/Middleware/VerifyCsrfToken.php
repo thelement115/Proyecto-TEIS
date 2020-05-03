@@ -20,5 +20,6 @@ class VerifyCsrfToken extends Middleware
      */
     protected $except = [
         //
+        'http://localhost/Proyecto-TEIS/public/cart/save',
     ];
 }
