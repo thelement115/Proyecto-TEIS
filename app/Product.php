@@ -8,7 +8,7 @@ class Product extends Model {
 
     //attributes id, name, price, description, created_at, updated_at
 
-    protected $fillable = ['name','price', 'description'];
+    protected $fillable = ['name','prize', 'description'];
 
     public function getId() {
         return $this->attributes['id'];
@@ -27,11 +27,11 @@ class Product extends Model {
     }
 
     public function getPrice() {
-        return $this->attributes['price'];
+        return $this->attributes['prize'];
     }
 
-    public function setPrice($price) {
-        $this->attributes['price'] = $price;
+    public function setPrice($prize) {
+        $this->attributes['prize'] = $prize;
     }
 
     public function getDescription() {

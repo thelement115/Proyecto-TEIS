@@ -4,6 +4,7 @@
 
 @section('content')
 
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-sm-10">
@@ -27,9 +28,9 @@
                                         </div>
                                     </div>
                                     <div class = "row p-5">
-                                        <form action={{route('checkOut.index',['id' => $product->getId()])}}>
-                                            @csrf
-                                            <button class="btn btn-primary">@lang('messages.buyProduct')</button>
+                                        <form method="POST" action="{{ route('product.destroy', $product->getId()) }}">
+                                            @csrf @method('DELETE')
+                                            <button class="btn btn-danger">@lang("Delete product")</button>
                                         </form>
                                     </div>
                                 </div>
@@ -38,17 +39,6 @@
                             @endforeach
                         </ul>
                     </div>
-                    {{-- <div class="col-sm">
-                        <ul id="errors">
-                            @foreach($data["products"] as $product)
-                                <div class="row p-5">
-                                    <div class="col-lg">
-                                        <img src="" alt="imagen_producto" />
-                                    </div>
-                                </div>
-                            @endforeach
-                        </ul>
-                    </div> --}}
                 </div>
             </div>
         </div>

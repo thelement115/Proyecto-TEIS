@@ -40,11 +40,11 @@ class ProductController extends Controller {
     public function store(Request $request) {
         $request->validate([
             "name" => "required",
-            "price" => "required|numeric|gt:0",
+            "prize" => "required|numeric|gt:0",
             "description" => "required|max:255"
             // "filename" => "required"
         ]);
-        Product::create($request->only(["name","price","description"]));
+        Product::create($request->only(["name","prize","description"]));
 
         return back()->with('created','Elemento creado satisfactoriamente');
     }
@@ -92,8 +92,7 @@ class ProductController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy(Product $id) {
-        $id->delete();
-
-        return redirect()->route('product.index');
+        Product::destroy($id->getId());
+        return back();
     }
 }

@@ -13,4 +13,6 @@ return [
     'ban' => 'Banear',
     'show' => 'Ver comentario',
     'comment' => 'Comentario',
+    'buyProduct' => 'Comprar',
+    'buyTitle' => 'Checkout',
 ];

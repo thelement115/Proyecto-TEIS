@@ -32,7 +32,7 @@
             <a href="{{ route('product.create')}}">@lang('messages.add')</a>
         </div>
         <div class = "col-md-auto">
-            <a href="{{ route('product.index')}}">@lang('messages.change')</a>
+            <a href="{{ route('product.modify')}}">@lang('messages.change')</a>
         </div>
     </div>
 </div>

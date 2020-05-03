@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Lang;
 use App\Admin;
+use App\Product;
 
 class AdminController extends Controller
 {
@@ -75,6 +76,13 @@ class AdminController extends Controller
         $user->banned= true;
         $user->save();
         return back()->with('created','Usuario baneado satifactoriamente!');;
+    }
+
+    public function modifyProducts(){
+        $data = []; //to be sent to the view
+        $data["title"] = "Productos";
+        $data["products"] = Product::all();
+        return view('admin.modifyProducts')->with("data",$data);
     }
 
 }
