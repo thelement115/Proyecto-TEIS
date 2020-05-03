@@ -41,13 +41,11 @@ class ProductController extends Controller {
     public function store(Request $request) {
         $request->validate([
             "name" => "required",
-            "price" => "required|numeric|gt:0",
-            "description" => "required|max:255",
-            "productImage" => "required"
+            "prize" => "required|numeric|gt:0",
+            "description" => "required|max:255"
+            // "filename" => "required"
         ]);
-        $storeInterface = app(ImageStorage::class);
-        $storeInterface->store($request);
-        Product::create($request->all());    
+        Product::create($request->only(["name","prize","description"]));
 
         return back()->with('created','Elemento creado satisfactoriamente');
     }
@@ -95,8 +93,7 @@ class ProductController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy(Product $id) {
-        $id->delete();
-
-        return redirect()->route('product.index');
+        Product::destroy($id->getId());
+        return back();
     }
 }

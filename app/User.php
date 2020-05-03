@@ -68,6 +68,13 @@ class User extends Authenticatable
         $this->attributes['banned'] = $banned;
     }
 
+    public function admin(){
+        return $this->belongsTo('App\Admin');
+    }
+
+    public function buyorder(){
+        return $this->belongsTo('App\Admin');
+    }
 
     /**
      * The attributes that should be cast to native types.

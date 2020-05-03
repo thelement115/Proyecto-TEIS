@@ -35,7 +35,6 @@
                 <a href="{{ route('comment.create') }}" > @lang("Escribir comentario")</a>
               </div>
             </div>
-
         </div>
     </div>
 </div>
