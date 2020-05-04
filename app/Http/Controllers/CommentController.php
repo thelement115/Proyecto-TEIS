@@ -10,9 +10,8 @@ class CommentController extends Controller
 {
 
   public function show($id){
-      $data = []; //to be sent to the view
+      $data = []; 
       $comment = Comment::findOrFail($id);
-
       $data["title"] = Lang::get('messages.show');
       $data["comments"] = $comment;
 
@@ -26,23 +25,21 @@ class CommentController extends Controller
     }
 
     public function save(Request $request){
+      
+      $user_id = Auth()->user()->id;
+      $validatedData = $request->validate(Comment::$createRules);
 
-      $request->validate([
-            "username" => "required",
-            "comment" => "required"
-
-        ]);
-
-      $comment=new comment;
-      $comment -> username = $request->username;
-      $comment -> comment = $request->comment;
+      $comment=new comment; /// create model object
+      $comment-> product_id = $request->product_id;
+      $comment-> user_id = $user_id;
+      $comment-> text = $request->text;
       $comment->save();
       return back()->with('success','Comentario agregado correctamente!');
 
    }
 
    public function comment($id){
-        $data = []; //to be sent to the view
+        $data = []; 
         $comment = Comment::findOrFail($id);
 
         $data["title"] = Lang::get('messages.comment');
@@ -51,9 +48,9 @@ class CommentController extends Controller
         return view('comment.comment')->with("data",$data);
     }
 
+    public function destroy($id) {
+      $id->delete();
 
-    public function erase($id){
-        Comment::where('id', $id)->delete();
-        return redirect()->route('product.index');
-    }
+      return redirect()->route('product.index');
+  }
 }

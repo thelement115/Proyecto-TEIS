@@ -9,7 +9,6 @@
                 <div class="card-header">{{ $data["comments"]->getUsername() }}</div>
                 <div class="card-body">
                     <b>@lang("Id"):</b> {{ $data["comments"]->getId()}}<br />
-                    <b>@lang("Nombre"):</b> {{ $data["comments"]->getUsername() }}<br />
                     <b>@lang("Comentario"):</b> {{ $data["comments"]->getComment() }} <br />
                     <form method="POST" action="{{ route('comment.erase', $data["comments"]->getId()) }}">
                         @csrf @method('DELETE')

@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Lang;
 class CartController extends Controller
 {
     public function index(Request $request){
-        $data = []; //to be sent to the view
+        $data = []; 
         $data["title"] = Lang::get('messages.index');
         $data["products"] = $request->session()->get("products");
         return view('cart.index')->with("data",$data);

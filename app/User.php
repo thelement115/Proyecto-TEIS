@@ -68,6 +68,10 @@ class User extends Authenticatable
         $this->attributes['banned'] = $banned;
     }
 
+    public function Comments(){
+        return $this->hasMany(Comment::class);
+    }
+
 
     /**
      * The attributes that should be cast to native types.

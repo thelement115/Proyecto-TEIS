@@ -42,4 +42,9 @@ class Product extends Model {
     public function setDescription($description) {
         $this->attributes['description'] = $description;
     }
+  
+    public function Comments(){
+        return $this->belongsToMany(Comment::class);
+    }
+   
 }
