@@ -15,8 +15,6 @@
                             {{$data['message'] ?? ''}}
                             @foreach($data["products"] as $product)
                             <div class="card" style="width: 50rem;">
-
-
                                 <div class="row p-4">
                                     <div class="col-lg">
                                         <h6>{{ "Id: ". $product->getId() }} </h6>
@@ -24,26 +22,23 @@
                                         <h5> @lang("Price") {{ $product->getPrice() }}</h5>
                                         <a href="{{ route('product.show', $product->getId()) }}" > @lang("View more details")</a>
                                     </div>
-
+                                    <div class = "col">
+                                        <img src="https://www.kamchatkatoys.com/imagenes/poridentidad?identidad=39f1cf89-e1d2-4c4b-862c-65c6074458f5&ancho=900&alto=" style="height:15vh">
                                     </div>
-                                    <div class="row p-5">
-                                        <div class="col-lg">
-                                            <img src="" alt="imagen_producto" />
-                                        </div>
-                                    </div>
-                                    <div class = "row p-5">
+                                </div>
+                                <div class = "row">
+                                    <div class = "col d-flex justify-content-center">
                                         <form action={{route('checkOut.index',['id' => $product->getId()])}}>
                                             @csrf
                                             <button class="btn btn-primary">@lang('messages.buyProduct')</button>
                                         </form>
                                     </div>
-                                      <form method="POST" action="{{route('cart.save')}}">
-                                        @csrf
-                                  <input type="submit" value="Agregar a carrito"/>
-                                </form>
                                 </div>
+                                <form method="POST" action="{{route('cart.save')}}">
+                                    @csrf
+                                    <input type="submit" value="Agregar a carrito"/>
+                                </form>
                             </div>
-                            <br>
                             @endforeach
                         </ul>
                     </div>
