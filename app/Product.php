@@ -42,7 +42,7 @@ class Product extends Model {
     }
   
     public function Comments(){
-        return $this->belongsToMany(Comment::class);
+        return $this->hasMany('App\Comment');
     }
    
 }

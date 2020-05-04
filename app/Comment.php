@@ -43,11 +43,11 @@ class Comment extends Model
     }
 
     public function User(){
-      return $this->belongsTo(User::class);
+      return $this->belongsTo('App\User');
     }
     
     public function Product(){
-      return $this->hasOne(Product::class);
+      return $this->hasOne('App\Product');
     }
 
 }

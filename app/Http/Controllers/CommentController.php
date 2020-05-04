@@ -24,13 +24,13 @@ class CommentController extends Controller
       return view('comment.create')->with("data",$data);
     }
 
-    public function save(Request $request){
+    public function save(Request $request, $id){
       
       $user_id = Auth()->user()->id;
       $validatedData = $request->validate(Comment::$createRules);
-
+      
       $comment=new comment; /// create model object
-      $comment-> product_id = $request->product_id;
+      $comment-> product_id = $id;
       $comment-> user_id = $user_id;
       $comment-> text = $request->text;
       $comment->save();

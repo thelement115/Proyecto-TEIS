@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Interfaces\ImageStorage;
 use App\Product;
+use App\Comment;
 use DB;
 
 class ProductController extends Controller {
@@ -37,12 +38,16 @@ class ProductController extends Controller {
         return back()->with('created','Elemento creado satisfactoriamente');
     }
 
-    public function show($id) {
-        $data = []; 
+    public function show($id) { 
+
+        $data = [];
         $product = Product::findOrFail($id);
+        $comment = $product->Comments()->get();
         $data["title"] = $product->getName();
         $data["product"] = $product;
-
+        $data["comments"] = $comment;
+        
+    
         return view('product.show')->with("data",$data);
     }
 
