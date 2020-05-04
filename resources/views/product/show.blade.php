@@ -26,12 +26,6 @@
             </div> <br>
             <div class = "row">
               <div class = "col">
-                <form method="POST" action="{{ route('product.destroy', $data["product"]->getId()) }}">
-                    @csrf @method('DELETE')
-                    <button class="btn btn-danger">@lang("Delete product")</button>
-                </form>
-              </div>
-              <div class = "col">
                 <a href="{{ route('comment.create') }}" > @lang("Escribir comentario")</a>
               </div>
             </div>
