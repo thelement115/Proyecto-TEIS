@@ -1,6 +1,6 @@
 ## Sin Docker
 
-Descargue el repositorio, para hacer eso ejecute el siguiente comando `git clone https://github.com/thelement115/Proyecto-TEIS.git`<br />
+Descargue el repositorio, para hacer eso ejecute el siguiente comando <br /> `git clone https://github.com/thelement115/Proyecto-TEIS.git`<br />
 cree una base de datos mysql llamada innodb<br />
 cree un documento .env y ponga en este la configuración que necesite. <br />
 use el comando 'php artisan migrate' para migrar la base de datos <br />
