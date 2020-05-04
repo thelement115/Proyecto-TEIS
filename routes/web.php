@@ -34,3 +34,4 @@ Route::get('/image/index', 'ImageController@index')->name('image.index');
 Route::post('/image/save', 'ImageController@save')->name('image.save');
 
 Route::get('/buy/{id}','BuyOrderController@index')->name('checkOut.index');
+Route::post('buy/checkout/{id}','BuyOrderController@save')->name('checkOut.save');

@@ -15,4 +15,5 @@ return [
     'comment' => 'Comentario',
     'buyProduct' => 'Comprar',
     'buyTitle' => 'Checkout',
+    'success' => 'Compra realizada con exito'
 ];

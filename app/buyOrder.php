@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class buyOrder extends Model
 {
@@ -22,8 +23,8 @@ class buyOrder extends Model
         return $this->attributes['date'];
     }
 
-    public function setDate($date){
-        $this->attributes['date'] = $date;
+    public function setDate(){
+        $this->attributes['date'] =Carbon::now();
     }
 
     public function getPaymentForm(){
