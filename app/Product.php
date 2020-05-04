@@ -40,4 +40,9 @@ class Product extends Model {
     public function setDescription($description) {
         $this->attributes['description'] = $description;
     }
+  
+    public function Comments(){
+        return $this->hasMany('App\Comment');
+    }
+   
 }

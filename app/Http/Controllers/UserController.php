@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Lang;
 class UserController extends Controller{
 
     public function show(){
-        $data = []; //to be sent to the view
+        $data = []; 
         return view('user.register')->with("data");
     }
 
