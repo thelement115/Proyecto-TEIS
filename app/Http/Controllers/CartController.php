@@ -3,15 +3,27 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
+use Diegonella\Cart;
 use Illuminate\Support\Facades\Lang;
 
 class CartController extends Controller
 {
     public function index(Request $request){
-        $data = []; //to be sent to the view
+        $data = []; 
         $data["title"] = Lang::get('messages.index');
         $data["products"] = $request->session()->get("products");
+
+
         return view('cart.index')->with("data",$data);
+    }
+
+    public function add(Product $product){
+        //agrega al carrito
+        
+        
+        return redirect ()->route('cart.index');
+        
+       
     }
 
     public function save(Request $request){

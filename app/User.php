@@ -68,6 +68,10 @@ class User extends Authenticatable
         $this->attributes['banned'] = $banned;
     }
 
+    public function Comments(){
+        return $this->hasMany('App\Comment');
+    }
+
     public function admin(){
         return $this->belongsTo('App\Admin');
     }

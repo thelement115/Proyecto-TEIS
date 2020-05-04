@@ -34,12 +34,14 @@
                                         </form>
                                     </div>
                                 </div>
-                                <form method="POST" action="{{route('cart.save')}}">
-                                    @csrf
-                                    <input type="submit" value="Agregar a carrito"/>
+                                <form action="{{ route('cart.add',$product->getId())}}"  class="btn">
+                                    <input class="btn btn-primary" type="submit" value="Agregar al carrito">
                                 </form>
+                             
                             </div>
+                            <br>
                             @endforeach
+
                         </ul>
                     </div>
                 </div>

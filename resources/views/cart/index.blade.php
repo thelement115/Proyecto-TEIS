@@ -12,11 +12,12 @@
                   </form>
                 <br /><br />
                 <ul>
+                        AQUÍ PONDRIA LOS PRODUCTOS SI SI LOS GUARDARA 
                     @if($data["products"])
                         @foreach($data["products"] as $product)
                         <li>
                         <h5> @lang("Product") {{ $product->getName() }}</h5>
-                        <h5> @lang("Price") {{ $product->getPrice() }}</h5></li>
+                        <h5> @lang("Price") {{ $product->getPrize() }}</h5></li>
 
 
                 </ul>
