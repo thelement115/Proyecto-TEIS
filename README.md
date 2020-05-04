@@ -1,4 +1,4 @@
-#Sin Docker
+## Sin Docker
 
 Descargue el repositorio para eso ejecute el siguiente comando 'git clone https://github.com/thelement115/Proyecto-TEIS.git'
 cree una base de datos mysql llamada: innodb
