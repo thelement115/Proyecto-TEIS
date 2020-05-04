@@ -35,7 +35,7 @@ Route::post('/image/save', 'ImageController@save')->name('image.save');
 
 Route::get('/buy/{id}','BuyOrderController@index')->name('checkOut.index');
 Route::post('buy/checkout/{id}','BuyOrderController@save')->name('checkOut.save');
-Route::get('/sells','ItemController@sells')->name('sells');
+Route::get('/sells','ItemController@sells')->name('sells.index');
 
 Route::get('/comment/create', 'CommentController@create')->name("comment.create");
 Route::post('/comment/save', 'CommentController@save')->name("comment.save");
