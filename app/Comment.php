@@ -14,7 +14,7 @@ class Comment extends Model
         return $this->attributes['username'];
     }
 
-    public function setUsername(){
+    public function setUsername($username){
       $this->attributes['username'] = $username;
     }
 
@@ -22,7 +22,7 @@ class Comment extends Model
         return $this->attributes['comment'];
     }
 
-    public function setComment(){
+    public function setComment($comment){
       $this->attributes['comment'] = $comment;
     }
 
