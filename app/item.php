@@ -34,8 +34,8 @@ class item extends Model
         $this->attributes['buyOrder_id'] = $buyOrder_id;
     }
 
-    public function getProduct_id(){
-        return $this->hasOne('App\Product','product_id');
+    public function product(){
+        return $this->belongsTo('App\Product');
     }
 
     public function setProduct_id($product_id){
