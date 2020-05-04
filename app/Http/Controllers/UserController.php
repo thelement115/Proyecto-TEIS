@@ -24,7 +24,7 @@ class UserController extends Controller{
     }
 
     public function destroy($id){
-        User::find($id)->delete();
+        User::destroy($id);
         return UserController::show();
     }
 

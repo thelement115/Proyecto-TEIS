@@ -35,7 +35,7 @@
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">$</div>
                                     </div>
-                                    <input type="number" class="form-control" name="price" placeholder="Ingrese el precio del producto" value="{{ old('price') }}"/>
+                                    <input type="number" class="form-control" name="prize" placeholder="Ingrese el precio del producto" value="{{ old('prize') }}"/>
                                 </div>
                             </div>
                         </div>

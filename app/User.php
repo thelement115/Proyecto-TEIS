@@ -72,6 +72,13 @@ class User extends Authenticatable
         return $this->hasMany(Comment::class);
     }
 
+    public function admin(){
+        return $this->belongsTo('App\Admin');
+    }
+
+    public function buyorder(){
+        return $this->belongsTo('App\Admin');
+    }
 
     /**
      * The attributes that should be cast to native types.

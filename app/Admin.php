@@ -23,8 +23,7 @@ class Admin extends Model
         $this->attributes['user_id'] = $user_id;
     }
 
-
     public function getUser_id(){
-        return $this->attributes['user_id'];
+        return $this->hasOne('App\User','user_id');
     }
 }

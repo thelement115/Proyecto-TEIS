@@ -13,6 +13,8 @@ return [
     'ban' => 'Banear',
     'show' => 'Ver comentario',
     'comment' => 'Comentario',
-     'create' => 'Crear comentario',
+    'buyProduct' => 'Comprar',
+    'buyTitle' => 'Checkout',
+    'create' => 'Crear comentario',
     'index' => 'Datos en sesión',
 ];
