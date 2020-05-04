@@ -12,6 +12,7 @@
                 <div class="row">
                     <div class="col-sm" >
                         <ul id="errors">
+                            {{$data['message'] ?? ''}}
                             @foreach($data["products"] as $product)
                             <div class="card" style="width: 50rem;">
 
@@ -46,17 +47,6 @@
                             @endforeach
                         </ul>
                     </div>
-                    {{-- <div class="col-sm">
-                        <ul id="errors">
-                            @foreach($data["products"] as $product)
-                                <div class="row p-5">
-                                    <div class="col-lg">
-                                        <img src="" alt="imagen_producto" />
-                                    </div>
-                                </div>
-                            @endforeach
-                        </ul>
-                    </div> --}}
                 </div>
             </div>
         </div>
