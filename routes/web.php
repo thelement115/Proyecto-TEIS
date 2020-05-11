@@ -35,7 +35,7 @@ Route::post('/image/save', 'ImageController@save')->name('image.save');
 
 Route::get('/buy/{id}','BuyOrderController@index')->name('checkOut.index');
 Route::post('buy/checkout/{id}','BuyOrderController@save')->name('checkOut.save');
-Route::get('/sells','ItemController@sells')->name('sells');
+Route::get('/sells','ItemController@sells')->name('sells.index');
 
 Route::get('/comment/create', 'CommentController@create')->name("comment.create");
 Route::post('/comment/save/{id}', 'CommentController@save')->name("comment.save");
@@ -50,7 +50,8 @@ Route::post('/cart/save', 'CartController@save')->name("cart.save");
 
 Route::get('/add-to-cart/{product_id}', 'CartController@add')->name("cart.add")->middleware('auth');
 
-
-
 Route::get('/image/index', 'ImageController@index')->name("image.index");
 Route::post('/image/save', 'ImageController@save')->name("image.save");
+
+Route::get('service','ServiceController@service')->name("service");
+Route::get('serviceThird','ServiceController@serviceThird')->name("serviceThird");

@@ -9,11 +9,11 @@ class Comment extends Model
     //
     public static $createRules = [
       'text' => 'required',
-  ];
-  
-  public static $updateRules = [
+    ];
+
+    public static $updateRules = [
       'text' => 'required',
-  ];
+    ];
 
     protected $fillable =['text'];
     public $timestamps = false;
@@ -45,7 +45,7 @@ class Comment extends Model
     public function User(){
       return $this->belongsTo('App\User');
     }
-    
+
     public function Product(){
       return $this->hasOne('App\Product');
     }

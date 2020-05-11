@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\buyOrder;
 
 class item extends Model
 {
@@ -26,8 +27,8 @@ class item extends Model
         $this->attributes['quantity'] = $quantity;
     }
 
-    public function getBuyOrder_id(){
-        return $this->hasOne('App\buyOrder','buyOrder_id');
+    public function buyOrder(){
+        return buyOrder::find($this->attributes['buyOrder_id']);
     }
 
     public function setBuyOrder_id($buyOrder_id){
