@@ -50,7 +50,8 @@ Route::post('/cart/save', 'CartController@save')->name("cart.save");
 
 Route::get('/add-to-cart/{product_id}', 'CartController@add')->name("cart.add")->middleware('auth');
 
-
-
 Route::get('/image/index', 'ImageController@index')->name("image.index");
 Route::post('/image/save', 'ImageController@save')->name("image.save");
+
+Route::get('service','ServiceController@service')->name("service");
+Route::get('serviceThird','ServiceController@serviceThird')->name("serviceThird");

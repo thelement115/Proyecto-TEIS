@@ -35,5 +35,15 @@
             <a href="{{ route('product.modify')}}">@lang('messages.change')</a>
         </div>
     </div>
+    <div class = "row border-bottom border-dark mt-2 mb-2 text-primary font-weight-bold">
+        <div class = "col-4 mb-2">
+            <a>@lang('messages.sell')</a>
+        </div>
+        <div class = "col-5">
+        </div>
+        <div class = "col-md-auto">
+            <a href="{{ route('sells.index')}}">@lang('messages.goSells')</a>
+        </div>
+    </div>
 </div>
 @endsection
