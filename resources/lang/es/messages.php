@@ -18,4 +18,9 @@ return [
     'success' => 'Compra realizada con exito',
     'create' => 'Crear comentario',
     'index' => 'Datos en sesión',
+    'goSells' => 'Ver las ventas',
+    'sell' => 'ventas',
+    'quantity' => 'Cantidad vendida:',
+    'total' => 'Total Pagado:',
+    'method' => 'Metodo de pago:',
 ];
