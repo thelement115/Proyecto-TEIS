@@ -22,7 +22,7 @@ En una maquina con docker instalado corra los siguientes comandos: <br/>
 
 ## Con Docker EC2
 
-Descargue git y docker, para eso corra los siguientes comandos:`<br />
+Descargue git y docker, para eso corra los siguientes comandos:<br />
 `#!/bin/bash`<br />
 `yum update -y` <br />
 `yum install -y docker `<br />
