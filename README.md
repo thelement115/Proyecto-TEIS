@@ -1,5 +1,7 @@
 En cualquiera de los 3 casos siguientes usted debe configurar el archivo .env del proyecto para su caso en especifico, en este github hay un .env que sirve de prueba con una base de datos mysql en aws
 
+mas información en : https://laravel.com/docs/7.x/configuration
+
 ## Sin Docker
 Descargue el repositorio, para hacer eso ejecute el siguiente comando <br /> `git clone https://github.com/thelement115/Proyecto-TEIS.git`<br />
 cree una base de datos mysql llamada innodb<br />
