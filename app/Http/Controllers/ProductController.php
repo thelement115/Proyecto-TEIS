@@ -13,17 +13,14 @@ class ProductController extends Controller {
         $data = [];
         $data["title"] = "List of products";
         $data["products"] = Product::all();
-
         return view('product.index')->with("data",$data);
     }
-
 
     public function create() {
         $data = [];
         $data["title"] = "Create product";
         return view('product.create')->with("data",$data);
     }
-
 
     public function store(Request $request) {
         $request->validate([
@@ -32,17 +29,19 @@ class ProductController extends Controller {
             "description" => "required|max:255"
             // "filename" => "required"
         ]);
-        $storeInterface = app(ImageStorage::class);
-        $storeInterface->store($request);
-        $cover = $request->file('productImage');
         $product = new Product();
+        if($request->hasfile('productImage')){
+            $storeInterface = app(ImageStorage::class);
+            $storeInterface->store($request);
+            $cover = $request->file('productImage');
+            $product->original_filename = $cover->getClientOriginalName();
+            $product->mime = $cover->getClientMimeType();
+            $extension = $cover->getClientOriginalExtension();
+            $product->filename = 'storage/'.$cover->getFilename().'.'.$extension;
+        }
         $product->name = $request->name;
         $product->prize = $request->prize;
         $product->description = $request->description;
-        $product->original_filename = $cover->getClientOriginalName();
-        $product->mime = $cover->getClientMimeType();
-        $extension = $cover->getClientOriginalExtension();
-        $product->filename = 'uploads/'.$cover->getFilename().'.'.$extension;
         $product->save();
         return back()->with('created','Elemento creado satisfactoriamente');
     }
