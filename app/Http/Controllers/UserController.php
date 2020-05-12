@@ -12,13 +12,8 @@ class UserController extends Controller{
         return view('user.register')->with("data");
     }
 
-    public function save(Request $request)
-    {
-        $request->validate([
-            "name" => "required",
-            "username" => "required",
-            "password" => "required"
-        ]);
+    public function save(Request $request){
+        $validatedData = $request->validate(User::$createRules);
         User::create($request->only(["name","username","password"]));
         return back()->with('success','User created successfully!');
     }

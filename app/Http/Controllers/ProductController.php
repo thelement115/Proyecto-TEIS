@@ -27,12 +27,7 @@ class ProductController extends Controller {
 
 
     public function store(Request $request) {
-        $request->validate([
-            "name" => "required",
-            "prize" => "required|numeric|gt:0",
-            "description" => "required|max:255"
-            // "filename" => "required"
-        ]);
+        $validatedData = $request->validate(Product::$createRules);
         Product::create($request->only(["name","prize","description"]));
 
         return back()->with('created','Elemento creado satisfactoriamente');

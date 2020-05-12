@@ -11,7 +11,7 @@
     </div>
     <div class = "row">
         <div class = "col d-flex justify-content-center">
-            <a href= {{route('home')}}>Volver al inicio</a>
+            <a href= {{route('home')}}>@lang('messages.backmain')</a>
         </div>
     </div>
 </div>

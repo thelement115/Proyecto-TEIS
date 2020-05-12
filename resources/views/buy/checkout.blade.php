@@ -13,12 +13,12 @@
                         <h5> @lang("Price") {{ $data["product"]->getPrice() }} x unidad</h5>
                         <form method = "POST" action={{route('checkOut.save', $data["product"]->getId())}}>
                             @csrf
-                            Metodo de pago: <select id="Method" name="Method">
+                            @lang('messages.method') <select id="Method" name="Method">
                                 <option value="Contraentrega">Contra entrega</option>
                                 <option value="Paypal">Paypal</option>
                                 <option value="TarjetaCredito">Tarjeta De Credito</option>
                             </select>&nbsp;
-                            Cantidad: <input type = "number" id= "quantity" name= "quantity" value="1"><br><br>
+                            @lang('messages.quantity') <input type = "number" id= "quantity" name= "quantity" value="1"><br><br>
                             <button class="btn btn-primary">@lang('messages.buyProduct')</button>
                             <br><br>
                         </form>

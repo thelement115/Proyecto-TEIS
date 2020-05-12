@@ -6,6 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model {
 
+    public static $createRules = [
+        'name' => 'required',
+        'prize' => 'required',
+        'description' => 'required',
+      ];
+  
+      public static $updateRules = [
+        'name' => 'required',
+        'prize' => 'required',
+        'description' => 'required',
+      ];
+
     //attributes id, name, price, description, created_at, updated_at
     protected $fillable = ['name','prize', 'description'];
 

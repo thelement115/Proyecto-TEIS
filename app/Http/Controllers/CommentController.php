@@ -9,15 +9,6 @@ use Illuminate\Support\Facades\Lang;
 class CommentController extends Controller
 {
 
-  public function show($id){
-      $data = []; 
-      $comment = Comment::findOrFail($id);
-      $data["title"] = Lang::get('messages.show');
-      $data["comments"] = $comment;
-
-      return view('comment.show')->with("data",$data);
-  }
-
     public function create(){
       $data = [];
       $data["title"] = Lang::get('messages.create');
@@ -37,16 +28,6 @@ class CommentController extends Controller
       return back()->with('success','Comentario agregado correctamente!');
 
    }
-
-   public function comment($id){
-        $data = []; 
-        $comment = Comment::findOrFail($id);
-
-        $data["title"] = Lang::get('messages.comment');
-        $data["comments"] = $comment;
-
-        return view('comment.comment')->with("data",$data);
-    }
 
     public function destroy($id) {
       $id->delete();

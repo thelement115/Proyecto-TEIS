@@ -5,39 +5,57 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Product;
 use App\item;
+use App\buyOrder;
 use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
     public function index(Request $request){
         $data = []; 
         $data["title"] = Lang::get('messages.index');
-        //$data["products"] = $request->session()->get("products");
         $products=null;
         $ids = $request->session()->get("products");
         if($ids != null){
-          //$products = DB::table('products')->whereIn('id', $ids)->get();
             $products = Product::find($ids);
         }
         $data["products"] = $products;
-        //dd($data);
         return view('cart.index')->with("data",$data);
     }
 
     public function add(Request $request, $id){
-        //$product = DB::table('products')->where('id', $id)->get()[0];  
+        
         $products =  $request->session()->get("products");
-        //$products[] = $product;
-        //$products[] = DB::table('products')->where('id', $id)->get()[0];
         if($products != null && in_array($id,$products)){
             //nada
         }
         else{
             $products[] = $id;
         }
-        //dd($products); 
         $request->session()->put('products', $products);
         return back();
+    }
+
+    public function buy(Request $request){
+        $product = $request->session()->get("products");
+        foreach($product as $product){
+            $id = Auth::id();
+            $buyorder = new buyOrder;
+            $buyorder->setDate();
+            $payment =$request->only(["Method"]);
+            $buyorder->setPaymentForm($payment["Method"]);
+            $buyorder->setUser_id($id);
+            $buyorder->save();
+            $idOrder = $buyorder->getId();
+            $item = new item;
+            $item->setProduct_id($product);
+            $item->setBuyOrder_id($idOrder);
+            $quantity = $request->only(["quantity"]);
+            $item->setQuantity($quantity["quantity"]);
+            $item->save();
+        }
+        $request->session()->forget('products');
+        return view('buy.succes');
     }
 
 
