@@ -26,7 +26,10 @@ class ItemController extends Controller
         $buyOrders = buyOrder::where('user_id',$id)->get();
         $items = [];
         foreach ($buyOrders as $order){
-            array_push($items, $order->item()->get()[0]);
+            $orders = $order->item()->get();
+            foreach ($orders as $ord){
+                array_push($items,$ord);
+            }
         }
         $data["items"] = $items;
         return view('buy.orders')->with('data',$data);
