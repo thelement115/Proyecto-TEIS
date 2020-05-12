@@ -34,7 +34,8 @@
                                         </form>
                                     </div>
                                 </div>
-                                <form action="{{ route('cart.add',$product->getId())}}"  class="btn">
+                                <form method="POST" action="{{ route('cart.add',$product->getId())}}"  class="btn">
+                                {{ csrf_field() }}
                                     <input class="btn btn-primary" type="submit" value="Agregar al carrito">
                                 </form>
                              

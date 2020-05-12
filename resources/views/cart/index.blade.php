@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -7,27 +8,41 @@
             <div class="card">
                 <div class="card-header">Carrito</div>
                 <div class="card-body">
-                  <form method="POST" action="{{ route('cart.save') }}">
-                    @csrf
-                  </form>
-                <br /><br />
-                <ul>
-                        AQUÍ PONDRIA LOS PRODUCTOS SI SI LOS GUARDARA 
-                    @if($data["products"])
-                        @foreach($data["products"] as $product)
-                        <li>
-                        <h5> @lang("Product") {{ $product->getName() }}</h5>
-                        <h5> @lang("Price") {{ $product->getPrize() }}</h5></li>
+                    <br /><br />
+                        @if($data["products"])
+                            @foreach($data["products"] as $product)
+                                
+                            <div class="card">
+                                <div class="card-header">
+                                 @lang("Product") 
+                                </div>
+                                <div class="card-body">
+                                    Nombre: <h5>{{ $product->getName() }}</h5>
+                                    Precio: <h5>{{ $product->getPrice() }}</h5>
+                                    Descripcion: <h5>{{ $product->getDescription() }}</h5>
+                                </div> 
+                            </div>
+                            <br /><br />
+                            @endforeach
 
-
-                </ul>
-                <form method="POST" action="{{ route('cart.erase', $product->getId()) }}">
-                    @csrf @method('DELETE')
-                    <button class="btn btn-danger">@lang("Delete item carrito")</button>
-                    </form>
-                    @endforeach
-                    @endif
+                            <div class ="card">
+                                <div class="card-header">
+                                    Total compra
+                                </div>
+                                <div class="card-body">
+                                    
+                                </div> 
+                            </div>
+                            <br /><br />
+                                <form method="POST" action="{{ route('cart.delete')}}">
+                                    @csrf @method('DELETE')
+                                    <button class="btn btn-danger">@lang("Borrar carrito")</button>
+                                </form>
+                                <br /><br />
+                            
+                         @endif
                 </div>
+                
             </div>
         </div>
     </div>

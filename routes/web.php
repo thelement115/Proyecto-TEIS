@@ -46,9 +46,8 @@ Route::get('/comment/comment/{id}', 'CommentController@comment')->name("comment.
 Route::get('/cart/index', 'CartController@index')->name("cart.index")->middleware('auth');
 
 Route::delete('/cart/delete', 'CartController@delete')->name("cart.delete");
-Route::post('/cart/save', 'CartController@save')->name("cart.save");
 
-Route::get('/add-to-cart/{product_id}', 'CartController@add')->name("cart.add")->middleware('auth');
+Route::post('/add-to-cart/{product_id}', 'CartController@add')->name("cart.add")->middleware('auth');
 
 
 

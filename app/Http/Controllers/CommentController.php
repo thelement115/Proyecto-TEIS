@@ -28,7 +28,7 @@ class CommentController extends Controller
       
       $user_id = Auth()->user()->id;
       $validatedData = $request->validate(Comment::$createRules);
-      
+  
       $comment=new comment; /// create model object
       $comment-> product_id = $id;
       $comment-> user_id = $user_id;
