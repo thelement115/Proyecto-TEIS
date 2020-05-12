@@ -60,14 +60,6 @@
                     </div>
                 </div>
             </div>
-            <div class = "row">
-              <div class = "col">
-                <form method="POST" action="{{ route('product.destroy', $data["product"]->getId()) }}">
-                    @csrf @method('DELETE')
-                    <button class="btn btn-danger">@lang("Delete product")</button>
-                </form>
-              </div>
-            </div>
         </div>
     </div>
 </div>
