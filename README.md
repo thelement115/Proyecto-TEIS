@@ -3,7 +3,7 @@ En cualquiera de los 3 casos siguientes usted debe configurar el archivo .env de
 mas información en : https://laravel.com/docs/7.x/configuration
 
 ## Sin Docker
-Descargue el repositorio, para hacer eso ejecute el siguiente comando <br /> `git clone https://github.com/thelement115/Proyecto-TEIS.git`<br />
+Descargue el repositorio, para hacer eso ejecute el siguiente comando: <br /> `git clone https://github.com/thelement115/Proyecto-TEIS.git`<br />
 cree una base de datos mysql llamada innodb<br />
 cree un documento .env y ponga en este la configuración que necesite. <br />
 para migrar la base de datos use el comando: <br />
@@ -15,11 +15,20 @@ la URL principal en local es http://localhost/TEIS/public.
 
 ## Con Docker en local
 
+Descargue el repositorio, para hacer eso ejecute el siguiente comando: <br /> `git clone https://github.com/thelement115/Proyecto-TEIS.git`<br />
 En una maquina con docker instalado corra los siguientes comandos: <br/>
 `docker image build -t "nombre"`<br/>
 `docker container run -d --name "nombre" -p 8000:80 "nombre"`<br/>
 
 ## Con Docker EC2
+
+Descargue git y docker, para eso corra los siguientes comandos:
+`#!/bin/bash`<br />
+`yum update -y` <br />
+`yum install -y docker `<br />
+`service docker start `<br />
+`usermod -a -G docker ec2-user`<br />
+Descargue el repositorio, para hacer eso ejecute el siguiente comando: <br /> `git clone https://github.com/thelement115/Proyecto-TEIS.git`<br />
 En una maquina con docker instalado corra los siguientes comandos:<br/>
 `docker image build -t "nombre"`<br/>
 `docker container run -d --name "nombre" -p 80:80 "nombre"`<br/>
