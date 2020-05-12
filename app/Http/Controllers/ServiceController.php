@@ -10,7 +10,11 @@ class ServiceController extends Controller
     public function service(){
         $client = new Client();
         $res = $client->get('http://ec2-52-91-77-71.compute-1.amazonaws.com/api/topanimals');
-        $data["res"] = $res->getBody();
+        $aux = $res->getBody();
+        $aux = json_decode($aux);
+        $aux = $aux->data;
+        $data = [];
+        $data["res"] = $aux;
         return view("ally.index")->with("data",$data);
     }
 
