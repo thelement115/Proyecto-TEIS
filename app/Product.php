@@ -19,7 +19,7 @@ class Product extends Model {
       ];
 
     //attributes id, name, price, description, created_at, updated_at
-    protected $fillable = ['name','prize', 'description'];
+    protected $fillable = ['name','prize', 'description', 'visible'];
 
     public function getId() {
         return $this->attributes['id'];
@@ -52,9 +52,16 @@ class Product extends Model {
     public function setDescription($description) {
         $this->attributes['description'] = $description;
     }
-  
+
     public function Comments(){
         return $this->hasMany('App\Comment');
     }
-   
+
+    public function getVisible(){
+        return $this->attributes['visible'];
+    }
+
+    public function setVisible($visible){
+        $this->attributes['visible'] = $visible;
+    }
 }

@@ -39,7 +39,11 @@ class buyOrder extends Model
         $this->attributes['user_id'] = $user_id;
     }
 
-    public function getUser_id(){
-        return $this->hasOne('App\User','user_id');
+    public function Item(){
+        return $this->hasOne('App\item','buyOrder_id');
+    }
+
+    public function User(){
+        return $this->belongsTo('App\User');
     }
 }

@@ -28,7 +28,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','banned',
+        'name', 'email', 'password','banned','department','city','address'
     ];
 
     /**
@@ -39,6 +39,31 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
+    public function getDepartment(){
+        return $this->attributes['department'];
+    }
+
+    public function setDepartment($department){
+        $this->attributes['department'] = $department;
+    }
+
+    public function getCity(){
+        return $this->attributes['city'];
+    }
+
+    public function setCity($city){
+        $this->attributes['city'] = $city;
+    }
+
+    public function getAddress(){
+        return $this->attributes['address'];
+    }
+
+    public function setAddress($address){
+        $this->attributes['address'] = $address;
+    }
 
     public function getId(){
         return $this->attributes['id'];

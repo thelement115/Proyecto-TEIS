@@ -21,9 +21,9 @@
                     <b>@lang("Product")</b> {{ $data["product"]->getName() }}<br />
                     <b>@lang("Price")</b> {{ $data["product"]->getPrice() }}<br /><br />
                     <b>@lang("Description")</b> {{ $data["product"]->getDescription() }}<br /><br />
-                    <img width="100" src="{{URL::asset('storage/test.png')}}"/>
-                </div> 
-            </div> 
+                    <img width="100" src="{{url($data["product"]->filename)}}"/>
+                </div>
+            </div>
             <br>
             <div class="card-header">
                    Comentarios
@@ -31,17 +31,17 @@
             <br>
             @foreach($data["comments"] as $comment)
                 <div class="card">
-                
+
                 <div class="card-header">
                    {{$comment->User()->get()[0]->getName()}}
                 </div>
                 <div class="card-body">
                    {{$comment->getText()}}
-                </div> 
-            </div> 
+                </div>
+            </div>
             @endforeach
             <br>
-            
+
             <div class="row justify-content-center">
                 <div class="col-md">
                     @include('util.messagecomment')

@@ -19,6 +19,7 @@ RUN apt-get upgrade -y \
 
 RUN php artisan key:generate
 RUN php artisan migrate
+run php artisan storage:link
 RUN chmod -R 777 storage
 RUN a2enmod rewrite
 RUN service apache2 restart

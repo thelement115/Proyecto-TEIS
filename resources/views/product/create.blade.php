@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@inject('local', 'App\Util\ImageLocalStorage')
 @section("title", $data["title"])
 
 @section('content')
@@ -45,11 +45,9 @@
                         </div>
                         <label>@lang("Image")</label>
                         <input type="file" name="productImage" />
-                        <img width="100" src="{{URL::asset('storage/test.png')}}"/>
-                        
                     </div>
                     <button type="submit" class="btn btn-primary">@lang("Create product")</button>
-                </form>                
+                </form>
             </div>
         </div>
     </div>

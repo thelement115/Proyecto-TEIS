@@ -11,6 +11,7 @@ return [
     'goProducts' => 'Productos',
     'succesRegister' => 'Se a guardado el admin correctamente',
     'ban' => 'Banear',
+    'delete' => 'Borrar',
     'show' => 'Ver comentario',
     'comment' => 'Comentario',
     'buyProduct' => 'Comprar',
@@ -29,4 +30,9 @@ return [
     'description' => 'Descripcion:',
     'totalbuy' => 'Total a pagar',
     'backmain' => 'Volver al inicio',
+    'buyer' => 'Comprador: ',
+    'deparment' => 'Departamento: ',
+    'city' => 'Ciudad: ',
+    'direction' => 'Dirección: ',
+
 ];
