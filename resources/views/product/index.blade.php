@@ -27,19 +27,22 @@
                                             <img width="100" src="{{url($product->filename)}}"/>
                                         </div>
                                     </div>
-                                    <div class = "row">
-                                        <div class = "col d-flex justify-content-center">
-                                            <form action={{route('checkOut.index',['id' => $product->getId()])}}>
-                                                @csrf
-                                                <button class="btn btn-primary">@lang('messages.buyProduct')</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <form action="{{ route('cart.add',$product->getId())}}"  class="btn">
-                                        <input class="btn btn-primary" type="submit" value="Agregar al carrito">
-                                    </form>
-                                </div>
                                 <br>
+                                <div class = "row">
+                                    <div class = "col d-flex justify-content-center">
+                                        <form action={{route('checkOut.index',['id' => $product->getId()])}}>
+                                            @csrf
+                                            <button class="btn btn-primary">@lang('messages.buyProduct')</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <form method="POST" action="{{ route('cart.add',$product->getId())}}"  class="btn">
+                                {{ csrf_field() }}
+                                    <input class="btn btn-primary" type="submit" value="Agregar al carrito">
+                                </form>
+                             
+                            </div>
+                            <br>
                             @endif
                             @endforeach
                         </ul>
