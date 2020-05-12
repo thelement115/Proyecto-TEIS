@@ -38,6 +38,8 @@ class ProductController extends Controller {
             $product->mime = $cover->getClientMimeType();
             $extension = $cover->getClientOriginalExtension();
             $product->filename = 'storage/'.$cover->getFilename().'.'.$extension;
+        }else{
+            $product->filename = 'https://www.kamchatkatoys.com/imagenes/poridentidad?identidad=39f1cf89-e1d2-4c4b-862c-65c6074458f5&ancho=900&alto=';
         }
         $product->name = $request->name;
         $product->prize = $request->prize;
