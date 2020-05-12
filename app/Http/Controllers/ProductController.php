@@ -37,7 +37,7 @@ class ProductController extends Controller {
             $product->original_filename = $cover->getClientOriginalName();
             $product->mime = $cover->getClientMimeType();
             $extension = $cover->getClientOriginalExtension();
-            $product->filename = 'uploads/'.$cover->getFilename().'.'.$extension;
+            $product->filename = 'storage/'.$cover->getFilename().'.'.$extension;
         }
         $product->name = $request->name;
         $product->prize = $request->prize;
