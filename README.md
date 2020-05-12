@@ -12,9 +12,9 @@ la URL principal en local es http://localhost/TEIS/public.
 
 En una maquina con docker instalado corra los siguientes comandos: <br/>
 `docker image build -t "nombre"`<br/>
-'docker container run -d --name laravel-docker -p 8000:80 laravel-app'<br/>
+`docker container run -d --name laravel-docker -p 8000:80 laravel-app`<br/>
 
 ## Con Docker en local
 En una maquina con docker instalado corra los siguientes comandos:<br/>
 `docker image build -t "nombre"`<br/>
-'docker container run -d --name laravel-docker -p 80:80 laravel-app'<br/>
+`docker container run -d --name laravel-docker -p 80:80 laravel-app`<br/>
