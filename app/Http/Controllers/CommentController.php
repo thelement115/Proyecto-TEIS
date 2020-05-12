@@ -6,14 +6,8 @@ use App\Comment;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Lang;
 
-class CommentController extends Controller{
-    public function show($id){
-      $data = [];
-      $comment = Comment::findOrFail($id);
-      $data["title"] = Lang::get('messages.show');
-      $data["comments"] = $comment;
-      return view('comment.show')->with("data",$data);
-    }
+class CommentController extends Controller
+{
 
     public function create(){
       $data = [];
@@ -31,14 +25,6 @@ class CommentController extends Controller{
       $comment->save();
       return back()->with('success','Comentario agregado correctamente!');
    }
-
-   public function comment($id){
-      $data = [];
-      $comment = Comment::findOrFail($id);
-      $data["title"] = Lang::get('messages.comment');
-      $data["comments"] = $comment;
-      return view('comment.comment')->with("data",$data);
-    }
 
     public function destroy($id) {
       $id->delete();

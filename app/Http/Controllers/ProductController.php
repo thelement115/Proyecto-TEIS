@@ -23,12 +23,8 @@ class ProductController extends Controller {
     }
 
     public function store(Request $request) {
-        $request->validate([
-            "name" => "required",
-            "prize" => "required|numeric|gt:0",
-            "description" => "required|max:255"
-            // "filename" => "required"
-        ]);
+
+        $validatedData = $request->validate(Product::$createRules);
         $product = new Product();
         if($request->hasfile('productImage')){
             $storeInterface = app(ImageStorage::class);
@@ -45,6 +41,7 @@ class ProductController extends Controller {
         $product->prize = $request->prize;
         $product->description = $request->description;
         $product->save();
+
         return back()->with('created','Elemento creado satisfactoriamente');
     }
 
