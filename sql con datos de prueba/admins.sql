@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS `admin` (
+`id` INT NULL,
+`user_id` INT NULL,
+`created_at` VARCHAR(MAX) NULL,
+`updated_at` VARCHAR(MAX) NULL
+);
+
+INSERT INTO admin VALUES
+(1,1,'2020-05-07 00:57:45','2020-05-07 00:57:45'),
+(2,2,'2020-05-12 07:16:19','2020-05-12 07:16:19');
