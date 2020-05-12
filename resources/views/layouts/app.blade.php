@@ -51,9 +51,15 @@
                                 </li>
                             @endif
                         @else
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('cart.index') }}">{{ __('Carrito') }}</a>
-                                </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('cart.index') }}">{{ __('Carrito') }}</a>
+                            </li>
+                            <li class = "nav-item">
+                                <a class = "nav-link" href = "{{route('orders') }}"> {{ __('Mis Compras') }} </a>
+                            </li>
+                            <li class = "nav-item">
+                                <a class = "nav-link" href = "{{route('direction') }}">{{__('Mi dirección')}}</a>
+                            </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('product.index') }}">{{ __('Inicio') }}</a>
                                 </li>
@@ -82,6 +88,16 @@
         <main class="py-4">
             @yield('content')
         </main>
+    </div>
+    <div class = "row">
+        <div class = "col d-flex justify-content-center">
+           <a href="{{ route('service')}}"> Conoce a nuestro aliado Canno y sus 2 mejores mascotas </a>
+        </div>
+    </div>
+    <div class = "row">
+        <div class = "col d-flex justify-content-center">
+            2020 &copy; Todos los derechos reservados
+        </div>
     </div>
 </body>
 </html>

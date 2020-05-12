@@ -15,6 +15,9 @@ use App\Http\Controllers\BuyOrderController;
 
 Auth::routes();
 
+Route::get('/direction','UserController@direction')->name('direction');
+Route::post('/direction/change','UserController@changeDirection')->name('direction.change');
+
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@index')->name('default');
 Route::get('/admin','AdminController@panel')->name('admin');
@@ -34,8 +37,9 @@ Route::get('/image/index', 'ImageController@index')->name('image.index');
 Route::post('/image/save', 'ImageController@save')->name('image.save');
 
 Route::get('/buy/{id}','BuyOrderController@index')->name('checkOut.index');
-Route::post('buy/checkout/{id}','BuyOrderController@save')->name('checkOut.save');
-Route::get('/sells','ItemController@sells')->name('sells.index');
+Route::post('/buy/checkout/{id}','BuyOrderController@save')->name('checkOut.save');
+Route::get('/admin/sells','ItemController@sells')->name('sells.index');
+Route::get('sells/','ItemController@orders')->name('orders');
 
 Route::get('/comment/create', 'CommentController@create')->name("comment.create");
 Route::post('/comment/save/{id}', 'CommentController@save')->name("comment.save");

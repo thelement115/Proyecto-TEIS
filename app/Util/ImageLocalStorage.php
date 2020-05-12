@@ -1,15 +1,17 @@
-<?php 
+<?php
 
 namespace App\Util;
 
 use App\Interfaces\ImageStorage;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class ImageLocalStorage implements ImageStorage {
     public function store($request){
-        if($request->hasFile('productImage')) {
-            Storage::disk('public')->put("test.png",file_get_contents($request->file('productImage')->getRealPath()));
-        }
+        $image = $request->file('productImage');
+        $extension = $image->getClientOriginalExtension();
+        Storage::disk('public')->put($image->getFilename().'.'.$extension,  File::get($image));
     }
+
 }
 
